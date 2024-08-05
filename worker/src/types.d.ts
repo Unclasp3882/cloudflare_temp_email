@@ -33,8 +33,10 @@ export type Bindings = {
     ENABLE_USER_DELETE_EMAIL: string | boolean | undefined
     ENABLE_INDEX_ABOUT: string | boolean | undefined
     DEFAULT_SEND_BALANCE: number | string | undefined
+    NO_LIMIT_SEND_ROLE: string | undefined | null
     ADMIN_CONTACT: string | undefined
     COPYRIGHT: string | undefined
+    DISABLE_SHOW_GITHUB: string | boolean | undefined
     FORWARD_ADDRESS_LIST: string | string[] | undefined
 
     // s3 config
@@ -71,7 +73,8 @@ type UserPayload = {
 
 type Variables = {
     userPayload: UserPayload,
-    jwtPayload: JwtPayload
+    userRolePayload: string | undefined | null,
+    jwtPayload: JwtPayload,
 }
 
 type HonoCustomType = {
